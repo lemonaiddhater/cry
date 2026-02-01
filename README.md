@@ -1,5 +1,6 @@
 # cry
 cool tool(might cry)
+!GIVEAWAY PASSKEY:ddos
 ## Install
 
 ### Linux / macOS
