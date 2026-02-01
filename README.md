@@ -79,7 +79,9 @@ python cry.py
 | VIP | 299 | 9500s |
 
 Free Passkey: root
+
 !GIVEAWAY! 
+
 PASSKEY:ddos
 ## Contact
 
