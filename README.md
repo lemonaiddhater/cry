@@ -4,22 +4,43 @@ cool tool(might cry)
 
 ### Linux / macOS
 ```bash
-git clone  && cd cry&& pip3 install requests && python3 cry.py
+apt install git python3 python3-pip
+git clone https://github.com/lemonaiddhater/cry.git
+cd cry
+pip3 install requests
+python3 cry.py
 ```
 
 ### Termux
 ```bash
-pkg install python git && git clone && cd cry&& pip install request && python cry.py
+pkg update && pkg upgrade
+pkg install git python
+git clone https://github.github.com/lemonaiddhater/cry.git
+cd cry
+pip install requests
+python cry.py
 ```
 
 ### iSH Shell
 ```bash
-apk add python3 py3-pip git && git clone && cd cry && pip3 install requests && python3 cry.py
+apk update
+apk add python3 py3-pip git
+git clone https://github.com/lemonaiddhater/cry.git
+cd cry
+pip3 install requests
+python3 cry.py
+
 ```
 
 ### Windows
 ```powershell
-git clone ; cd cry; pip install requests; python cry.py
+winget install -e --id Python.Python.3; winget install -e --id Git.Git
+python --version
+git --version
+git clone https://github.com/lemonaiddhater/cry.git
+cd cry
+pip install requests
+python cry.py
 ```
 
 ## Requirements
@@ -46,6 +67,7 @@ git clone ; cd cry; pip install requests; python cry.py
 | TCPHEX    | Encoded traffic flow       | Free, Hard, Pro, VIP |
 | TLSVIP    | Premium secure routing     | VIP                  |
 | UDP       | (NOTWORKING)       |                  |
+| UDPHEX    | (NOTWORKING)       |                  |
 ## Plans
 
 | Plan | Concurrents | Duration |
