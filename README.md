@@ -1,6 +1,6 @@
 # cry
 cool tool(might cry)
-!GIVEAWAY PASSKEY:ddos
+
 ## Install
 
 ### Linux / macOS
@@ -79,7 +79,8 @@ python cry.py
 | VIP | 299 | 9500s |
 
 Free Passkey: root
-
+!GIVEAWAY! 
+PASSKEY:ddos
 ## Contact
 
 TikTok: @sql1337
