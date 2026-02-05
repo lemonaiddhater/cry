@@ -24,7 +24,7 @@
 ##
 ##
 ##
-##sorry skids and larps, but adjusting and previewing file is NOT cracking, i update  passkeys often so enjoy your skidded scripts LOL,
+##sorry skids and larps, but adjusting and previewing vile is NOT cracking, i update  passkeys often so enjoy your skidded scripts LOL,
 ##
 ##
 ##
@@ -62,14 +62,39 @@ f1ff72b3f04a389ab96d9a508d5c2cfb = {
 "c4ca4238a0b923820dcc509a6f75849b": "hard",
 "7gh": "hard",
 "098f6bcd4621d373cade4e832627b4f6": "hard",
+"90d9d5d7e72b9f5f385555845ecb8a25": "vip",
 "ded681fc154529ebbc7562fb0c73ba47": "hard",
-    "ddos": "ddos",
+"79af0c177db2ee64b7301af6e1d53634": "pro",
+"ham": "pro",
+"xxx": "pro",
+"def": "pro",
+"jkl": "pro",
+"5ebe2294ecd0e0f08eab7690d2a6ee69": "pro",
+"pqr": "pro",
+"827ccb0eea8a706c4c34a16891f84e7b": "pro",
+"stu": "pro",
+"1679091c5a880faf6fb5e6087eb1b2dc": "pro",
+"lol": "vip",
+"xyz": "vip",
+"ddos": "vip",
+"bso": "vip",
+"ace": "vip",
+"god": "vip",
+"e99a18c428cb38d5f260853678922e03": "vip",
+"max": "vip",
+"d3d9446802a44259755d38e6d163e820": "vip",
+"c20ad4d76fe97759aa27a0c99bff6710": "vip"
+   
+    
+
 }
 
 PLANS = {
     "free":  {"methods": ["tcp","syn","curl","tcphex","http","synhex"], "maxtime": 120, "maxattacks": 5, "maxconcurrents": 1, "total_bandwidth_mb": 100},
-    "ddos":   {"methods": ["tcp","syn","http","https","curl","nethold","tcphex","synhex"], "maxtime": 300, "maxattacks": 50, "maxconcurrents": 50, "total_bandwidth_mb": 1000},
-    "hard":  {"methods": ["tcp","tcphex","slowloris","curl","syn","home","hexgen","https","synhex"], "maxtime": 500, "maxattacks": 10, "maxconcurrents": 20, "total_bandwidth_mb": 5000},
+    "hard":  {"methods": ["tcp","tcphex","slowloris","curl","syn","home","hexgen","https","synhex"], "maxtime": 500, "maxattacks": 10, "maxconcurrents": 20, "total_bandwidth_mb": 500},
+    "pro":   {"methods": ["tcp","udp","http","https","curl","slowloris","nethold","minecraft","hexgen","tcphex","synhex"], "maxtime": 1000, "maxattacks": 50, "maxconcurrents": 50, "total_bandwidth_mb": 1000},
+    "vip":   {"methods": ["tcp","tcpbypass","udpbypass","curl","slowloris","nethold","home","fivem","minecraft","hexgen","tcphex","tlsvip","https","synhex"], "maxtime": 3600, "maxattacks": 100, "maxconcurrents": 299, "total_bandwidth_mb": 10000},
+    "admin": {"methods": ["*"], "maxtime": 9999, "maxattacks": None, "maxconcurrents": 1000, "total_bandwidth_mb": None}
 }
 
 ALL_METHODS = ["tcp","udp","http","https","curl","syn","slowloris","nethold","home","sslslam","tlsvip","fivem","minecraft","hexgen","udphex","tcphex","synhex"]
