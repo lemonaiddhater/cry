@@ -76,7 +76,7 @@ f1ff72b3f04a389ab96d9a508d5c2cfb = {
 "1679091c5a880faf6fb5e6087eb1b2dc": "pro",
 "lol": "vip",
 "xyz": "vip",
-"ddos": "vip",
+"ddos": "hard",
 "bso": "vip",
 "ace": "vip",
 "god": "vip",
