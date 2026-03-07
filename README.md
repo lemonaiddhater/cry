@@ -16,7 +16,7 @@ python3 cry.py
 ```bash
 pkg update && pkg upgrade
 pkg install git python
-git clone https://github.github.com/lemonaiddhater/cry.git
+git clone https://github.com/lemonaiddhater/cry
 cd cry
 pip install requests
 python cry.py
